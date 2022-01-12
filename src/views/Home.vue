@@ -21,23 +21,23 @@
       </div>
       <Calendario />
     </div>
-    <modal name="example">This is an example</modal>
+    <button @click="$refs.modal.display(true)">Mostrame el modal</button>
+    <Modal ref="modal" :content="`<div>
+      Todas Putas
+      </div>`"/>
   </div>
 </template>
 
 <script>
+/* eslint-disable */
 import Calendario from '@/components/Calendario.vue'
-// import VModal from 'vue-js-modal'
-
-// console.log(VModal)
+import Modal from '@/components/modal.vue'
 
 export default {
   name: 'Home',
   components: {
-    Calendario
-  },
-  mounted () {
-    this.$modal.show('example')
+    Calendario,
+    Modal
   }
 }
 </script>
